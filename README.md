@@ -11,5 +11,6 @@ Also drop traffic that goes to the ironbane services directly
 
 * iptables -i eth0 -A INPUT -p tcp --dport 3000 -j DROP
 * iptables -i eth0 -A INPUT -p tcp --dport 3100 -j DROP
-* iptables -i eth0 -A INPUT -p tcp --dport 8080 -j DROP
 
+
+Note: Don't drop the router on port 8080!!!
