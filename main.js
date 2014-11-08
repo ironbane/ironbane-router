@@ -1,12 +1,26 @@
-var http = require('http'),  
-    httpProxy = require('http-proxy');
+var http = require('http'),
+    httpProxy = require('http-proxy'),
+    proxy = httpProxy.createProxyServer({}),
+    url = require('url');
 
-var options = {  
-  hostnameOnly: true,
-  router: {
-    'dev.server.ironbane.com': '127.0.0.1:3000',
-    'play.server.ironbane.com': '127.0.0.1:3100',
-  }
-}
+http.createServer(function(req, res) {
+    var hostname = req.headers.host.split(":")[0];
+    var pathname = url.parse(req.url).pathname;
 
-var proxyServer = httpProxy.createServer(options).listen(80);  
+    console.log(hostname);
+    console.log(pathname);
+
+    switch(hostname)
+    {
+        case 'dev.server.ironbane.com':
+            proxy.web(req, res, { target: 'http://localhost:3000' });
+            break;
+        case 'play.server.ironbane.com':
+            proxy.web(req, res, { target: 'http://localhost:3100' });
+            break;
+        default:
+            proxy.web(req, res, { target: 'http://localhost:3100' });
+    }
+}).listen(80, function() {
+    console.log('proxy listening on port 80');
+});
