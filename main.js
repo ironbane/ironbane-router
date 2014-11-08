@@ -21,6 +21,6 @@ http.createServer(function(req, res) {
         default:
             proxy.web(req, res, { target: 'http://localhost:3100' });
     }
-}).listen(80, function() {
-    console.log('proxy listening on port 80');
+}).listen(8080, function() {
+    console.log('proxy listening on port 8080');
 });
