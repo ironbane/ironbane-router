@@ -6,3 +6,10 @@ The router takes care of the forwarding between the dev and play domain on the s
 to forward this to port 80 and keep it all secure use
 
 iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+
+Also drop traffic that goes to the ironbane services directly
+
+iptables -A INPUT -p tcp --dport 3000 -j DROP
+iptables -A INPUT -p tcp --dport 3100 -j DROP
+iptables -A INPUT -p tcp --dport 8080 -j DROP
+
