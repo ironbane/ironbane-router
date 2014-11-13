@@ -13,7 +13,7 @@ http.createServer(function(req, res) {
     switch(hostname)
     {
         case 'dev.server.ironbane.com':
-            proxy.web(req, res, { target: 'http://localhost:5001' });
+            proxy.web(req, res, { target: 'http://localhost:3000' });
             break;
         case 'play.server.ironbane.com':
             proxy.web(req, res, { target: 'http://localhost:3100' });
