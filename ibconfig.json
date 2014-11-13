@@ -1,1 +1,7 @@
-{}
+{
+    'path' : '/',
+    'gitsecret' : 'aFrrEwDeT54d7yUijtyNbfa',
+    'port' : '4000',
+    'hipsecret' : '09dc7be7e02bdc9caf375ee67dcec9',
+    'hiproom' : '959020'
+}
