@@ -61,5 +61,5 @@ process.on('SIGINT', exitHandler.bind(null, {
 
 //catches uncaught exceptions
 process.on('uncaughtException', exitHandler.bind(null, {
-    exit: true
+    exit: false
 }));
