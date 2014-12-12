@@ -13,9 +13,11 @@ http.createServer(function (req, res) {
     }
     pathname = url.parse(req.url).pathname;
 
+    console.log('====================================');
     console.log('headers: ', req.headers);
     console.log('hostname: ', hostname);
     console.log('pathname: ', pathname);
+    console.log('====================================');
 
     // TODO: pull ports from config
     switch (hostname) {
