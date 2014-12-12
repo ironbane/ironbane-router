@@ -14,6 +14,7 @@ http.createServer(function (req, res) {
     pathname = url.parse(req.url).pathname;
 
     console.log('====================================');
+    console.log('CONNECTION: ', new Date().toString());
     console.log('headers: ', req.headers);
     console.log('hostname: ', hostname);
     console.log('pathname: ', pathname);
